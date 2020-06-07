@@ -6,13 +6,17 @@ import java.sql.SQLException;
 import java.util.Date;
 import java.util.Scanner;
 
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
 import Produto.Produto;
 import ConexaoBD.ConnectionFactory;
 import MetodosGerais.*;
 
 public class Create {
 
-	public static void menuCreate() {
+	/*public static void menuCreate() {
 		System.out.println("Gostaria de cadastrar um produto?(s/n)");
 		char resposta = MetodosDeApoio.obterInputTratado('s', 'n');
 		if (resposta == 's') {
@@ -33,6 +37,11 @@ public class Create {
 			insertInto(produto);
 			
 		}
+	}*/
+	public static void menuCreate(JPanel panel) {
+		JLabel label = new JLabel("funcionou");
+		panel.add(label);
+
 	}
 
 	public static void insertInto(Produto produto) {
