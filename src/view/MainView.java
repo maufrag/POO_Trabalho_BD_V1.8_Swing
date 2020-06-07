@@ -1,10 +1,6 @@
-package main;
+package view;
 
-import java.awt.Button;
-import java.awt.Component;
 import java.awt.Dimension;
-import java.awt.GridLayout;
-import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Arrays;
@@ -12,9 +8,9 @@ import java.util.List;
 import CRUD.*;
 import javax.swing.*;
 
-public class ClasseMain {
+public class MainView {
 
-	public static void main(String[] args) {//TODO ajustar o layout com outros panels/layouts
+	public static void main(String[] args) {// TODO ajustar o layout com outros panels/layouts
 		System.out.println("Programa iniciado\n");
 		JFrame frame = new JFrame();
 		JPanel panelPrincipal = new JPanel();// é preciso usar um painel para agrupar esses componente
@@ -44,12 +40,12 @@ public class ClasseMain {
 	}
 
 	public static void configurarBotao(int largura, int altura, JButton botao) {
-		//botao.setAlignmentX(Component.CENTER_ALIGNMENT);
+		// botao.setAlignmentX(Component.CENTER_ALIGNMENT);
 		botao.setMinimumSize(new Dimension(largura, altura));
 		botao.setPreferredSize(new Dimension(largura, altura));
 		botao.setMaximumSize(new Dimension(largura, altura));
 		botao.setOpaque(false);
-		//botao.setBorder(BorderFactory.createEmptyBorder(0, 0, 0, 0));
+		// botao.setBorder(BorderFactory.createEmptyBorder(0, 0, 0, 0));
 	}
 
 	public static void popularTelaComBotoes(List<String> listaMenu, JPanel panel, JFrame frame) {
@@ -70,6 +66,8 @@ public class ClasseMain {
 		return Arrays.asList("Create", "Read", "Update", "Delete", "Sair");
 	}
 
+
+
 	public static void irParaOpcaoSelecionada(String nomeMenu, JPanel panel, JFrame frame) {
 		JPanel novoPanel = new JPanel();
 		switch (nomeMenu) {
@@ -77,7 +75,7 @@ public class ClasseMain {
 			panel.setVisible(false);
 			frame.remove(panel);
 			frame.add(novoPanel);
-			Create.menuCreate(novoPanel);
+			CreateView.menuCreate(novoPanel, panel, frame);
 			break;
 		case "Read":
 			Read.readMenu();
@@ -90,7 +88,7 @@ public class ClasseMain {
 			Delete.deleteMenu();
 			break;
 		case "Sair":
-			// TODO
+			MetodosDeApoioView.sair();
 			break;
 		}
 	}
