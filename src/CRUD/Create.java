@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.util.Date;
 import java.util.Scanner;
 
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -18,37 +19,34 @@ import MetodosGerais.*;
 
 public class Create {
 
-	/*public static void menuCreate() {
-		System.out.println("Gostaria de cadastrar um produto?(s/n)");
-		char resposta = MetodosDeApoio.obterInputTratado('s', 'n');
-		if (resposta == 's') {
-			Scanner scan = new Scanner(System.in);
-			Produto produto = new Produto(new Date());
-
-			System.out.println("Informe o nome do produto:");
-			produto.setNomeProduto(scan.nextLine());
-
-			System.out.println("Informe a descrição do produto:");
-			produto.setDescricao(scan.nextLine());
-
-			System.out.println("Informe o valor de compra:");
-			produto.setValorCompra(scan.nextDouble());
-			
-			System.out.println("Inserindo dados na tabela...");
-			
-			insertInto(produto);
-			
-		}
-	}*/
-	public static void menuCreate(JPanel mainPanel) {//criar outros panel para estarem deste panel
-		mainPanel.setLayout(new GridLayout(3, 0));
-		JLabel label = new JLabel("Bem vindo ao menu Create.");
-		mainPanel.add(label);
-		
-		JLabel label2 = new JLabel("Gostaria de cadastrar um produto?");
-		mainPanel.add(label2);
-		JTextField textField = new JTextField(10);
-		mainPanel.add(textField);
+	/*
+	 * public static void menuCreate() {
+	 * System.out.println("Gostaria de cadastrar um produto?(s/n)"); char resposta =
+	 * MetodosDeApoio.obterInputTratado('s', 'n'); if (resposta == 's') { Scanner
+	 * scan = new Scanner(System.in); Produto produto = new Produto(new Date());
+	 * 
+	 * System.out.println("Informe o nome do produto:");
+	 * produto.setNomeProduto(scan.nextLine());
+	 * 
+	 * System.out.println("Informe a descrição do produto:");
+	 * produto.setDescricao(scan.nextLine());
+	 * 
+	 * System.out.println("Informe o valor de compra:");
+	 * produto.setValorCompra(scan.nextDouble());
+	 * 
+	 * System.out.println("Inserindo dados na tabela...");
+	 * 
+	 * insertInto(produto);
+	 * 
+	 * } }
+	 */
+	public static void menuCreate(JPanel mainPanel) {// criar outros panel para estarem deste panel
+		JPanel panel2 = new JPanel();
+		JButton botaoVoltar = new JButton("Voltar");
+		mainPanel.add(panel2);
+		panel2.setLayout(new GridLayout(3, 0));
+		panel2.add(new JLabel("Bem vindo ao menu Create."));
+		panel2.add(new JLabel("Gostaria de cadastrar um produto?"));
 		
 		
 	}

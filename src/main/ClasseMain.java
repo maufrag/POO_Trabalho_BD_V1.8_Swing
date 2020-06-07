@@ -40,7 +40,7 @@ public class ClasseMain {
 		JLabel label = new JLabel("Por favor, clique na opção que deseja executar:");
 		label.setBorder(BorderFactory.createEmptyBorder(0, 0, 30, 0));
 		panel.add(label);
-		panel.setAlignmentX(Component.CENTER_ALIGNMENT);
+		panel.add(Box.createHorizontalGlue());
 	}
 
 	public static void configurarBotao(int largura, int altura, JButton botao) {
