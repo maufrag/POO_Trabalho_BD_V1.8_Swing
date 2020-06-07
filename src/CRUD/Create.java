@@ -1,5 +1,6 @@
 package CRUD;
 
+import java.awt.GridLayout;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -9,6 +10,7 @@ import java.util.Scanner;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTextField;
 
 import Produto.Produto;
 import ConexaoBD.ConnectionFactory;
@@ -38,10 +40,17 @@ public class Create {
 			
 		}
 	}*/
-	public static void menuCreate(JPanel panel) {
-		JLabel label = new JLabel("funcionou");
-		panel.add(label);
-
+	public static void menuCreate(JPanel mainPanel) {//criar outros panel para estarem deste panel
+		mainPanel.setLayout(new GridLayout(3, 0));
+		JLabel label = new JLabel("Bem vindo ao menu Create.");
+		mainPanel.add(label);
+		
+		JLabel label2 = new JLabel("Gostaria de cadastrar um produto?");
+		mainPanel.add(label2);
+		JTextField textField = new JTextField(10);
+		mainPanel.add(textField);
+		
+		
 	}
 
 	public static void insertInto(Produto produto) {

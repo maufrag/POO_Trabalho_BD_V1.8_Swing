@@ -14,7 +14,7 @@ import javax.swing.*;
 
 public class ClasseMain {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) {//TODO ajustar o layout com outros panels/layouts
 		System.out.println("Programa iniciado\n");
 		JFrame frame = new JFrame();
 		JPanel panelPrincipal = new JPanel();// é preciso usar um painel para agrupar esses componente
