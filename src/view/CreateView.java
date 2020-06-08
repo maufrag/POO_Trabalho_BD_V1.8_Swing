@@ -1,14 +1,14 @@
 package view;
-
+import components.CreateMenuObterDados;
+import java.awt.BasicStroke;
+import java.awt.BorderLayout;
 import java.awt.FlowLayout;
+import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.GridLayout;
 import java.awt.Label;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.util.Date;
-import java.util.Scanner;
 
+import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -17,48 +17,56 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SpringLayout;
 
-import Produto.Produto;
-
 public class CreateView {
-	public static void menuCreate(JPanel panelAtual, JPanel panelPrincipal, JFrame frame) {
-		
-		JPanel panelTexto = new JPanel();
-		panelTexto.setLayout(new BoxLayout(panelTexto, BoxLayout.PAGE_AXIS));
-		panelTexto.add(new JLabel("Bem vindo ao menu Create."));
-		panelTexto.add(new JLabel("Gostaria de cadastrar um produto?"));
+	public static void menuCreate(JPanel panelAtual, JPanel menuInicialPanel, JFrame frame) {
+		CreateMenuObterDados teste = new CreateMenuObterDados();
+		panelAtual.add(teste);
+		/*JPanel panelBox = new JPanel();
+		panelBox.setBorder(BorderFactory.createStrokeBorder(new BasicStroke(5.0f)));
 		JPanel panelBotoes = new JPanel();
-		panelBotoes.setLayout(new SpringLayout());
+		GridBagConstraints c = new GridBagConstraints();
+		
+		//panelBotoes.setBorder(BorderFactory.createStrokeBorder(new BasicStroke(10.0f)));
 		JButton botaoVoltar = new JButton("Voltar");
 		JButton botaoConfirmar = new JButton("Confirmar");
-		panelBotoes.add(botaoConfirmar);
-		panelBotoes.add(botaoVoltar);
-		panelTexto.add(panelBotoes);
-		adicionarAcoesConfirmarEVoltar(botaoConfirmar, botaoVoltar, panelAtual, panelPrincipal, frame);
-		panelAtual.add(panelTexto);
+		//panelBox.setLayout(new GridLayout(5, 2));
+		panelBox.add(new JLabel("Bem vindo ao menu Create."));
+		panelBox.add(new JLabel("Gostaria de cadastrar um produto?"));
+		//panelBotoes.setLayout(new BorderLayout());
+		
+		panelBox.add(botaoConfirmar, BorderLayout.WEST);
+		panelBox.add(botaoVoltar, BorderLayout.EAST);
+		panelBox.add(panelBotoes);
+		panelAtual.add(panelBox);
+		
+		/*
+		panelBox.add(panelBotoes);
+		adicionarAcoesConfirmarEVoltar(botaoConfirmar, botaoVoltar, panelAtual, menuInicialPanel, frame);
 		obterDados(panelBotoes);
+		*/
 // mainPanel.add(panelBotoes);
 
 	}
+
 	public static void obterDados(JPanel panel) {
 
-		
-		GridBagLayout gridBagLayout = new GridBagLayout();
+		GridLayout gridBagLayout = new GridLayout(1, 1);
 		panel.setLayout(gridBagLayout);
 		Label nomeProdutoLabel = new Label("Informe o nome do produto: ");
 		JTextField nomeProdutoTextField = new JTextField(15);
 		panel.add(nomeProdutoLabel);
 		panel.add(nomeProdutoTextField);
-		
+
 		Label descricaoProdutoLabel = new Label("Informe a decrição do produto: ");
 		JTextField descricaoProdutoTextField = new JTextField(15);
 		panel.add(descricaoProdutoLabel);
 		panel.add(descricaoProdutoTextField);
-		
+
 		Label valorCompraProdutoLabel = new Label("Informe o nome do produto: ");
 		JTextField valorCompraProdutoTextField = new JTextField(15);
 		panel.add(valorCompraProdutoLabel);
 		panel.add(valorCompraProdutoTextField);
-		
+
 		JButton botaoConfirmar = new JButton("Confirmar");
 		panel.add(botaoConfirmar);
 
