@@ -70,11 +70,11 @@ public class MainView {
 
 	public static void irParaOpcaoSelecionada(String nomeMenu, JPanel panel, JFrame frame) {
 		JPanel novoPanel = new JPanel();
+		panel.setVisible(false);
+		frame.remove(panel);
+		frame.add(novoPanel);
 		switch (nomeMenu) {
 		case "Create":
-			panel.setVisible(false);
-			frame.remove(panel);
-			frame.add(novoPanel);
 			CreateView.menuCreate(novoPanel, panel, frame);
 			break;
 		case "Read":
