@@ -1,54 +1,24 @@
 package view;
-import components.CreateMenuObterDados;
-import java.awt.BasicStroke;
-import java.awt.BorderLayout;
-import java.awt.FlowLayout;
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
-import java.awt.GridLayout;
-import java.awt.Label;
 
-import javax.swing.BorderFactory;
-import javax.swing.BoxLayout;
+import components.CreateMenuObterDados;
+import components.CreateMenuTelaInicial;
+
 import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JTextField;
-import javax.swing.SpringLayout;
 
 public class CreateView {
 	public static void menuCreate(JPanel panelAtual, JPanel menuInicialPanel, JFrame frame) {
-		CreateMenuObterDados teste = new CreateMenuObterDados();
-		panelAtual.add(teste);
-		/*JPanel panelBox = new JPanel();
-		panelBox.setBorder(BorderFactory.createStrokeBorder(new BasicStroke(5.0f)));
-		JPanel panelBotoes = new JPanel();
-		GridBagConstraints c = new GridBagConstraints();
-		
-		//panelBotoes.setBorder(BorderFactory.createStrokeBorder(new BasicStroke(10.0f)));
-		JButton botaoVoltar = new JButton("Voltar");
-		JButton botaoConfirmar = new JButton("Confirmar");
-		//panelBox.setLayout(new GridLayout(5, 2));
-		panelBox.add(new JLabel("Bem vindo ao menu Create."));
-		panelBox.add(new JLabel("Gostaria de cadastrar um produto?"));
-		//panelBotoes.setLayout(new BorderLayout());
-		
-		panelBox.add(botaoConfirmar, BorderLayout.WEST);
-		panelBox.add(botaoVoltar, BorderLayout.EAST);
-		panelBox.add(panelBotoes);
-		panelAtual.add(panelBox);
-		
-		/*
-		panelBox.add(panelBotoes);
-		adicionarAcoesConfirmarEVoltar(botaoConfirmar, botaoVoltar, panelAtual, menuInicialPanel, frame);
-		obterDados(panelBotoes);
-		*/
-// mainPanel.add(panelBotoes);
-
+		CreateMenuTelaInicial createMenuTelaInicial = new CreateMenuTelaInicial(panelAtual, menuInicialPanel, frame);
+		panelAtual.add(createMenuTelaInicial);
+	}
+	
+	public static void obterDados(JPanel panelAtual, JPanel panelSuperior, JFrame frame) {
+		CreateMenuObterDados createMenuObterDados = new CreateMenuObterDados(panelAtual, panelSuperior, frame);
+		panelAtual.add(createMenuObterDados);
 	}
 
-	public static void obterDados(JPanel panel) {
+	/*public static void obterDados(JPanel panel) {
 
 		GridLayout gridBagLayout = new GridLayout(1, 1);
 		panel.setLayout(gridBagLayout);
@@ -70,7 +40,7 @@ public class CreateView {
 		JButton botaoConfirmar = new JButton("Confirmar");
 		panel.add(botaoConfirmar);
 
-	}
+	}*/
 
 	public static void adicionarAcoesConfirmarEVoltar(JButton botaoConfirmar, JButton botaoVoltar, JPanel panelAtual,
 			JPanel panelPrincipal, JFrame frame) {
@@ -86,3 +56,22 @@ public class CreateView {
 	}
 
 }
+/*
+ * JPanel panelBox = new JPanel();
+ * panelBox.setBorder(BorderFactory.createStrokeBorder(new BasicStroke(5.0f)));
+ * JPanel panelBotoes = new JPanel(); GridBagConstraints c = new
+ * GridBagConstraints();
+ * 
+ * //panelBotoes.setBorder(BorderFactory.createStrokeBorder(new
+ * BasicStroke(10.0f))); JButton botaoVoltar = new JButton("Voltar"); JButton
+ * botaoConfirmar = new JButton("Confirmar"); //panelBox.setLayout(new
+ * GridLayout(5, 2)); panelBox.add(new JLabel("Bem vindo ao menu Create."));
+ * panelBox.add(new JLabel("Gostaria de cadastrar um produto?"));
+ * //panelBotoes.setLayout(new BorderLayout());
+ * 
+ * panelBox.add(botaoConfirmar, BorderLayout.WEST); panelBox.add(botaoVoltar,
+ * BorderLayout.EAST); panelBox.add(panelBotoes); panelAtual.add(panelBox);
+ * 
+ * /* panelBox.add(panelBotoes); obterDados(panelBotoes);
+ */
+//mainPanel.add(panelBotoes);

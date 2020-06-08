@@ -27,7 +27,7 @@ public class MainView {
 		frame.setTitle("Produtos");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.pack();
-		frame.setSize(400, 350);// define o tamanho da janela
+		frame.setSize(500, 350);// define o tamanho da janela
 		frame.setVisible(true);// coloca a janela visivel
 	}
 
@@ -66,13 +66,16 @@ public class MainView {
 		return Arrays.asList("Create", "Read", "Update", "Delete", "Sair");
 	}
 
+	public static void atualizarPanel(JPanel panelAtual, JPanel panelAntigo, JFrame frame) {
+		panelAntigo.setVisible(false);
+		frame.remove(panelAntigo);
+		frame.add(panelAtual);
+	}
 
 
 	public static void irParaOpcaoSelecionada(String nomeMenu, JPanel panel, JFrame frame) {
 		JPanel novoPanel = new JPanel();
-		panel.setVisible(false);
-		frame.remove(panel);
-		frame.add(novoPanel);
+		atualizarPanel(novoPanel, panel, frame);
 		switch (nomeMenu) {
 		case "Create":
 			CreateView.menuCreate(novoPanel, panel, frame);
