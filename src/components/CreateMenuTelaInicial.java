@@ -77,12 +77,13 @@ public class CreateMenuTelaInicial extends JPanel {
 		procederCadastro(btnNewButton, panelAtual, panel, frame);
 	}
 
-	private void procederCadastro(JButton button,JPanel novoPanel ,JPanel panelAtual, JFrame frame) {
+	private void procederCadastro(JButton button, JPanel novoPanel, JPanel panelPrincipal, JFrame frame) {
 		button.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				MainView.atualizarPanel(novoPanel, panelAtual, frame);
-				CreateView.obterDados(novoPanel, panelAtual, frame);
+				// MainView.atualizarPanel(novoPanel, panelAtual, frame);
+
+				CreateView.obterDados(novoPanel, panelPrincipal, frame);
 			}
 		});
 	}

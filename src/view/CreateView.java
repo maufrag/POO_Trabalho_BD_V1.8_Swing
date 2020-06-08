@@ -12,35 +12,34 @@ public class CreateView {
 		CreateMenuTelaInicial createMenuTelaInicial = new CreateMenuTelaInicial(panelAtual, menuInicialPanel, frame);
 		panelAtual.add(createMenuTelaInicial);
 	}
-	
-	public static void obterDados(JPanel panelAtual, JPanel panelSuperior, JFrame frame) {
-		CreateMenuObterDados createMenuObterDados = new CreateMenuObterDados(panelAtual, panelSuperior, frame);
-		panelAtual.add(createMenuObterDados);
+
+	public static void obterDados(JPanel panelAnterior, JPanel panelPrincipal, JFrame frame) {
+		JPanel novoPanel = new JPanel();
+		MainView.atualizarPanel(novoPanel, panelAnterior, frame);
+		CreateMenuObterDados createMenuObterDados = new CreateMenuObterDados(novoPanel, panelAnterior, frame);
+		novoPanel.add(createMenuObterDados);
 	}
 
-	/*public static void obterDados(JPanel panel) {
-
-		GridLayout gridBagLayout = new GridLayout(1, 1);
-		panel.setLayout(gridBagLayout);
-		Label nomeProdutoLabel = new Label("Informe o nome do produto: ");
-		JTextField nomeProdutoTextField = new JTextField(15);
-		panel.add(nomeProdutoLabel);
-		panel.add(nomeProdutoTextField);
-
-		Label descricaoProdutoLabel = new Label("Informe a decrição do produto: ");
-		JTextField descricaoProdutoTextField = new JTextField(15);
-		panel.add(descricaoProdutoLabel);
-		panel.add(descricaoProdutoTextField);
-
-		Label valorCompraProdutoLabel = new Label("Informe o nome do produto: ");
-		JTextField valorCompraProdutoTextField = new JTextField(15);
-		panel.add(valorCompraProdutoLabel);
-		panel.add(valorCompraProdutoTextField);
-
-		JButton botaoConfirmar = new JButton("Confirmar");
-		panel.add(botaoConfirmar);
-
-	}*/
+	/*
+	 * public static void obterDados(JPanel panel) {
+	 * 
+	 * GridLayout gridBagLayout = new GridLayout(1, 1);
+	 * panel.setLayout(gridBagLayout); Label nomeProdutoLabel = new
+	 * Label("Informe o nome do produto: "); JTextField nomeProdutoTextField = new
+	 * JTextField(15); panel.add(nomeProdutoLabel); panel.add(nomeProdutoTextField);
+	 * 
+	 * Label descricaoProdutoLabel = new Label("Informe a decrição do produto: ");
+	 * JTextField descricaoProdutoTextField = new JTextField(15);
+	 * panel.add(descricaoProdutoLabel); panel.add(descricaoProdutoTextField);
+	 * 
+	 * Label valorCompraProdutoLabel = new Label("Informe o nome do produto: ");
+	 * JTextField valorCompraProdutoTextField = new JTextField(15);
+	 * panel.add(valorCompraProdutoLabel); panel.add(valorCompraProdutoTextField);
+	 * 
+	 * JButton botaoConfirmar = new JButton("Confirmar"); panel.add(botaoConfirmar);
+	 * 
+	 * }
+	 */
 
 	public static void adicionarAcoesConfirmarEVoltar(JButton botaoConfirmar, JButton botaoVoltar, JPanel panelAtual,
 			JPanel panelPrincipal, JFrame frame) {
