@@ -20,6 +20,11 @@ import javax.swing.SwingConstants;
 public class CreateMenuTelaInicial extends JPanel {
 
 	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 4379564746578828590L;
+
+	/**
 	 * Create the panel.
 	 */
 	public CreateMenuTelaInicial(JPanel panelAtual, JPanel panelPrincipal, JFrame frame) {

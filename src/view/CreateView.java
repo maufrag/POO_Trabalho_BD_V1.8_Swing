@@ -20,26 +20,6 @@ public class CreateView {
 		novoPanel.add(createMenuObterDados);
 	}
 
-	/*
-	 * public static void obterDados(JPanel panel) {
-	 * 
-	 * GridLayout gridBagLayout = new GridLayout(1, 1);
-	 * panel.setLayout(gridBagLayout); Label nomeProdutoLabel = new
-	 * Label("Informe o nome do produto: "); JTextField nomeProdutoTextField = new
-	 * JTextField(15); panel.add(nomeProdutoLabel); panel.add(nomeProdutoTextField);
-	 * 
-	 * Label descricaoProdutoLabel = new Label("Informe a decrição do produto: ");
-	 * JTextField descricaoProdutoTextField = new JTextField(15);
-	 * panel.add(descricaoProdutoLabel); panel.add(descricaoProdutoTextField);
-	 * 
-	 * Label valorCompraProdutoLabel = new Label("Informe o nome do produto: ");
-	 * JTextField valorCompraProdutoTextField = new JTextField(15);
-	 * panel.add(valorCompraProdutoLabel); panel.add(valorCompraProdutoTextField);
-	 * 
-	 * JButton botaoConfirmar = new JButton("Confirmar"); panel.add(botaoConfirmar);
-	 * 
-	 * }
-	 */
 
 	public static void adicionarAcoesConfirmarEVoltar(JButton botaoConfirmar, JButton botaoVoltar, JPanel panelAtual,
 			JPanel panelPrincipal, JFrame frame) {
@@ -53,24 +33,4 @@ public class CreateView {
 		frame.add(panelPrincipal);
 		panelPrincipal.setVisible(true);
 	}
-
 }
-/*
- * JPanel panelBox = new JPanel();
- * panelBox.setBorder(BorderFactory.createStrokeBorder(new BasicStroke(5.0f)));
- * JPanel panelBotoes = new JPanel(); GridBagConstraints c = new
- * GridBagConstraints();
- * 
- * //panelBotoes.setBorder(BorderFactory.createStrokeBorder(new
- * BasicStroke(10.0f))); JButton botaoVoltar = new JButton("Voltar"); JButton
- * botaoConfirmar = new JButton("Confirmar"); //panelBox.setLayout(new
- * GridLayout(5, 2)); panelBox.add(new JLabel("Bem vindo ao menu Create."));
- * panelBox.add(new JLabel("Gostaria de cadastrar um produto?"));
- * //panelBotoes.setLayout(new BorderLayout());
- * 
- * panelBox.add(botaoConfirmar, BorderLayout.WEST); panelBox.add(botaoVoltar,
- * BorderLayout.EAST); panelBox.add(panelBotoes); panelAtual.add(panelBox);
- * 
- * /* panelBox.add(panelBotoes); obterDados(panelBotoes);
- */
-//mainPanel.add(panelBotoes);
