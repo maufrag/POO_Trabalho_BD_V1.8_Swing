@@ -1,4 +1,5 @@
-package CRUD;
+package controller;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -6,14 +7,14 @@ import java.sql.SQLException;
 import ConexaoBD.ConnectionFactory;
 import MetodosGerais.MetodosDeApoio;
 
-public class Delete {
+public class DeleteController {
 	public static void deleteMenu() {
 		System.out.println("Tem certeza que deseja deletar algum registro?(s/n)");
 		char resposta = MetodosDeApoio.obterInputTratado('s', 'n');
 		if (resposta == 's') {
 			System.out.println("Gerando lista de produtos...\n");
 
-			Read.gerarListaDeProduto(-1);
+			ReadController.gerarListaDeProduto(-1);
 
 			System.out.println("Selecione o IdProduto do registro que deseja deletar");
 			int idProdutoSelecionado = MetodosDeApoio.obterInputTratado(1, 999999999);

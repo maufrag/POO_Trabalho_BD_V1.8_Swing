@@ -5,7 +5,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Arrays;
 import java.util.List;
-import CRUD.*;
+import controller.DeleteController;
+import controller.UpdateController;
+
 import javax.swing.*;
 
 public class MainView {
@@ -40,12 +42,10 @@ public class MainView {
 	}
 
 	public static void configurarBotao(int largura, int altura, JButton botao) {
-		// botao.setAlignmentX(Component.CENTER_ALIGNMENT);
 		botao.setMinimumSize(new Dimension(largura, altura));
 		botao.setPreferredSize(new Dimension(largura, altura));
 		botao.setMaximumSize(new Dimension(largura, altura));
 		botao.setOpaque(false);
-		// botao.setBorder(BorderFactory.createEmptyBorder(0, 0, 0, 0));
 	}
 
 	public static void popularTelaComBotoes(List<String> listaMenu, JPanel panel, JFrame frame) {
@@ -57,7 +57,7 @@ public class MainView {
 					irParaOpcaoSelecionada(menu, panel, frame);
 				}
 			});
-			configurarBotao(100, 30, botao);
+			configurarBotao(75, 25, botao);
 			panel.add(botao);
 		}
 	}
@@ -72,7 +72,6 @@ public class MainView {
 		frame.add(panelAtual);
 	}
 
-
 	public static void irParaOpcaoSelecionada(String nomeMenu, JPanel panel, JFrame frame) {
 		JPanel novoPanel = new JPanel();
 		atualizarPanel(novoPanel, panel, frame);
@@ -81,14 +80,14 @@ public class MainView {
 			CreateView.menuCreate(novoPanel, panel, frame);
 			break;
 		case "Read":
-			Read.readMenu();
+			ReadView.readMenu(novoPanel, panel, frame);
 			break;
 		case "Update":
-			;
-			Update.updateMenu();
+			UpdateController.updateMenu();
 			break;
 		case "Delete":
-			Delete.deleteMenu();
+			DeleteView.deleteMenu(novoPanel, panel, frame);
+			
 			break;
 		case "Sair":
 			MetodosDeApoioView.sair();

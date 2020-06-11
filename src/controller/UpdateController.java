@@ -1,4 +1,4 @@
-package CRUD;
+package controller;
 
 import java.lang.reflect.Field;
 import java.sql.Connection;
@@ -11,7 +11,7 @@ import ConexaoBD.ConnectionFactory;
 import MetodosGerais.MetodosDeApoio;
 import Produto.Produto;
 
-public class Update {
+public class UpdateController {
 	public static void updateMenu() {
 		System.out.println("Deseja atualizar arquivos do banco?(s/n)");
 
@@ -20,7 +20,7 @@ public class Update {
 		if (resposta == 's') {
 			System.out.println("Gerando lista de registros no banco...\n");
 
-			List<Produto> listaDeProduto = Read.gerarListaDeProduto(-1);
+			List<Produto> listaDeProduto = ReadController.gerarListaDeProduto(-1);
 
 			System.out.println("Selecione o IdProduto do registro que deseja alterar");
 			int idProdutoSelecionado = MetodosDeApoio.obterInputTratado(1, 999999999);

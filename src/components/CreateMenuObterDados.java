@@ -138,7 +138,7 @@ public class CreateMenuObterDados extends JPanel {
 		gbc_btnNewButton_1.gridy = 7;
 		add(btnNewButton_1, gbc_btnNewButton_1);
 
-		btnNewButton.addActionListener(new ActionListener() {//melhor forma para pegar os valores atualizados
+		btnNewButton.addActionListener(new ActionListener() {// melhor forma para pegar os valores atualizados
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				CreateController.obterDadosProduto(textField.getText(), textField_1.getText(),
@@ -154,8 +154,8 @@ public class CreateMenuObterDados extends JPanel {
 			}
 		});
 	}
-	
+
 	public void limparCampos(JButton button) {
-		
+
 	}
 }
