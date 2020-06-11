@@ -5,7 +5,6 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 import ConexaoBD.ConnectionFactory;
-import MetodosGerais.MetodosDeApoio;
 
 public class DeleteController {
 	public static void delete(int idProduto) {

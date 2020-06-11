@@ -2,7 +2,6 @@ package components;
 
 import javax.swing.JPanel;
 
-import view.CreateView;
 import view.DeleteView;
 import view.MetodosDeApoioView;
 

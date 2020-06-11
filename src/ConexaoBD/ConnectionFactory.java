@@ -5,7 +5,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class ConnectionFactory {
-	private static final String DRIVE = "com.mysql.jdbc.Driver";
+	//private static final String DRIVE = "com.mysql.jdbc.Driver";
 	private static final String URL = "jdbc:mysql://localhost:3306/trabalhopoo?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
 	// pode ocorrer alguns erros por conta do formato do horario
 	private static final String USER = "root";

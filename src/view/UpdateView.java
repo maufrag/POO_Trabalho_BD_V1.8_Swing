@@ -11,11 +11,12 @@ public class UpdateView {
 		UpdateMenuTelaInicial updateMenuTelaInicial = new UpdateMenuTelaInicial(panelAtual, panelAntigo, frame);
 		panelAtual.add(updateMenuTelaInicial);
 	}
-	
+
 	public static void updateListaProduto(JPanel panelSuperior, JFrame frame) {
 		JPanel novoPanel = new JPanel();
 		MainView.atualizarPanel(novoPanel, panelSuperior, frame);
-		UpdateMenuAtualizarInformacao updateMenuAtualizarInformacao = new UpdateMenuAtualizarInformacao(novoPanel, panelSuperior, frame);
+		UpdateMenuAtualizarInformacao updateMenuAtualizarInformacao = new UpdateMenuAtualizarInformacao(novoPanel,
+				panelSuperior, frame);
 		novoPanel.add(updateMenuAtualizarInformacao);
 	}
 }
