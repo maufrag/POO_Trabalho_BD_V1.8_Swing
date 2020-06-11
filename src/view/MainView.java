@@ -18,7 +18,6 @@ public class MainView {
 		JPanel panelPrincipal = new JPanel();// é preciso usar um painel para agrupar esses componente
 		configurarPanel(panelPrincipal);
 		panelPrincipal.setLayout(new BoxLayout(panelPrincipal, BoxLayout.PAGE_AXIS));
-		// panel.setAlignmentX(Component.CENTER_ALIGNMENT);
 		popularTelaComBotoes(obterItensMenu(), panelPrincipal, frame);
 		frame.add(panelPrincipal);// coloca o conteudo do painel no frame
 		configurarJFrame(frame);
@@ -83,11 +82,11 @@ public class MainView {
 			ReadView.readMenu(novoPanel, panel, frame);
 			break;
 		case "Update":
-			UpdateController.updateMenu();
+			UpdateView.updateMenu(novoPanel, panel, frame);
 			break;
 		case "Delete":
 			DeleteView.deleteMenu(novoPanel, panel, frame);
-			
+
 			break;
 		case "Sair":
 			MetodosDeApoioView.sair();

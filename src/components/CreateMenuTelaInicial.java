@@ -3,23 +3,16 @@ package components;
 import javax.swing.JPanel;
 
 import view.CreateView;
-import view.MainView;
 import view.MetodosDeApoioView;
-import view.MetodosDeApoioView.*;
 import java.awt.GridBagLayout;
 import javax.swing.JLabel;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.List;
-
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.SwingConstants;
-
-import Produto.Produto;
-import controller.ReadController;
 
 public class CreateMenuTelaInicial extends JPanel {
 
@@ -73,8 +66,7 @@ public class CreateMenuTelaInicial extends JPanel {
 		gbc_btnNewButton_1.gridy = 8;
 		add(btnNewButton_1, gbc_btnNewButton_1);
 		MetodosDeApoioView.voltar(btnNewButton_1, panelAtual, panelPrincipal, frame);
-		
-		
+	
 	}
 
 	private void procederCadastro(JButton button, JPanel novoPanel, JFrame frame) {

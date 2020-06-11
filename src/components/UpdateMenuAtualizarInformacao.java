@@ -2,34 +2,34 @@ package components;
 
 import javax.swing.JPanel;
 import java.awt.GridBagLayout;
-import javax.swing.JLabel;
+import java.awt.Component;
+import java.awt.Dimension;
 import java.awt.GridBagConstraints;
+
+import javax.swing.Box;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+
 import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.JButton;
-import javax.swing.JFrame;
 import javax.swing.JScrollPane;
-import java.awt.Component;
-import javax.swing.Box;
-import java.awt.Dimension;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
-import javax.swing.table.TableModel;
 
-import controller.DeleteController;
 import controller.ReadController;
 import controller.TesteEnum;
 import view.MetodosDeApoioView;
 
-public class DeleteMenuListagem extends JPanel {
+public class UpdateMenuAtualizarInformacao extends JPanel {
 	private JTable table;
 
 	/**
 	 * Create the panel.
 	 */
-	public DeleteMenuListagem(JPanel panelAtual, JPanel panelSuperior, JFrame frame) {
+	public UpdateMenuAtualizarInformacao(JPanel panelAtual, JPanel panelSuperior, JFrame frame) {
 		GridBagLayout gridBagLayout = new GridBagLayout();
 		gridBagLayout.columnWidths = new int[] { 0, 0, 0, 0, 0, 0, 0 };
 		gridBagLayout.rowHeights = new int[] { 0, 0, 0, 0, 0, 0, 0, 0 };
@@ -65,7 +65,7 @@ public class DeleteMenuListagem extends JPanel {
 		MetodosDeApoioView.ajustarTabela(table);
 		scrollPane.setViewportView(table);
 
-		JLabel lblNewLabel = new JLabel("Selecione a linha que deseja remover");
+		JLabel lblNewLabel = new JLabel("Edite o conteudo que deseja alterar");
 		GridBagConstraints gbc_lblNewLabel = new GridBagConstraints();
 		gbc_lblNewLabel.insets = new Insets(0, 0, 5, 5);
 		gbc_lblNewLabel.gridx = 2;
@@ -79,7 +79,7 @@ public class DeleteMenuListagem extends JPanel {
 		gbc_rigidArea.gridy = 4;
 		add(rigidArea, gbc_rigidArea);
 
-		JButton btnNewButton = new JButton("Remover");
+		JButton btnNewButton = new JButton("Atualizar");
 		GridBagConstraints gbc_btnNewButton = new GridBagConstraints();
 		gbc_btnNewButton.insets = new Insets(0, 0, 5, 5);
 		gbc_btnNewButton.gridx = 1;
@@ -92,21 +92,21 @@ public class DeleteMenuListagem extends JPanel {
 		gbc_btnNewButton_1.gridx = 3;
 		gbc_btnNewButton_1.gridy = 5;
 		add(btnNewButton_1, gbc_btnNewButton_1);
+		MetodosDeApoioView.ajustarTabela(table);
 		MetodosDeApoioView.voltar(btnNewButton_1, panelAtual, panelSuperior, frame);
 		ReadController.gerarListaDeProduto(TesteEnum.TodosOsValores.getValue(), table);
-		removerLinha(btnNewButton, table);
+		
 	}
 
-	public void removerLinha(JButton button, JTable table) {
+	public void atualizarDado(JButton button, JTable table) {
 		button.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e ) {
-			DefaultTableModel model = (DefaultTableModel) table.getModel();
-			int idProduto;
-			int linhaSelecionada = table.getSelectedRow();
-			int coluna = 0;
-			idProduto = Integer.parseInt(table.getValueAt(linhaSelecionada, 0).toString());
-			DeleteController.delete(idProduto);
-			model.removeRow(linhaSelecionada);
+			public void actionPerformed(ActionEvent e) {
+				DefaultTableModel model = (DefaultTableModel) table.getModel();
+				int idProduto;
+				int linhaSelecionada = table.getSelectedRow();
+				
+				int coluna = 0;
+				idProduto = Integer.parseInt(table.getValueAt(linhaSelecionada, 0).toString());
 			}
 		});
 	}
